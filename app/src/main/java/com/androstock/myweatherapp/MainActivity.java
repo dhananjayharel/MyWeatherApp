@@ -52,12 +52,13 @@ public class MainActivity extends AppCompatActivity {
         weatherIcon.setTypeface(weatherFont);
 
         taskLoadUp(city);
+        
 
         selectCity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Uncomment the code below to pass the test
-                /*
+               
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
                 alertDialog.setTitle("Change City");
                 final EditText input = new EditText(MainActivity.this);
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 city = input.getText().toString();
+                            
                                 taskLoadUp(city);
                             }
                         });
@@ -82,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         });
                 alertDialog.show();
-                */
+               
             }
         });
 
@@ -95,6 +97,8 @@ public class MainActivity extends AppCompatActivity {
             task.execute(query);
         } else {
             Toast.makeText(getApplicationContext(), "No Internet Connection", Toast.LENGTH_LONG).show();
+
+    
         }
     }
 
